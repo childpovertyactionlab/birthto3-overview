@@ -94,6 +94,7 @@ acs_var <- c(
   oohh = "B25106_002", #owner-occupied households
   rohh = "B25106_024", #renter occupied households
   thh = "B25106_001", #total households
+  thh_u18 = "B11005_002", #total households with children under 18
   es_3t4 = "B14003_004", #enrolled in school 3 to 4
   pop_bp = "S1701_C02_001", #population below poverty
   bp_u18 = "S1701_C02_002", #population under 18 below poverty
@@ -150,10 +151,10 @@ sdcut <- function(x) {
 
 #### TidyCensus data wrangling and modification ########
 tidymut <- tidyadd %>%
-  mutate(his_per = round(his_popE/tot_popE, digits = 2)*100,
-         bl_per = round(bl_popE/tot_popE, digits = 2)*100,
-         wh_per = round(wh_popE/tot_popE, digits = 2)*100,
-         as_per = round(as_popE/tot_popE, digits = 2)*100,
+  mutate(his_per = round(his_popE/tot_popE, digits = 3)*100,
+         bl_per = round(bl_popE/tot_popE, digits = 3)*100,
+         wh_per = round(wh_popE/tot_popE, digits = 3)*100,
+         as_per = round(as_popE/tot_popE, digits = 3)*100,
          inc_qc = sdcut(med_incE),
          inc_gr = ifelse(inc_qc == 0, "Very Below", 
                          ifelse(inc_qc == 1, "Somewhat Below",
@@ -166,20 +167,20 @@ tidymut <- tidyadd %>%
                                  ifelse(wh_per == maxdemo & maxdemo >= 45, "White",
                                         ifelse(as_per == maxdemo & maxdemo >= 45, "Asian", "Multi")))),
          es3t4_per = round(es_3t4E/pop_3t4E, digits = 2)*100,
-         bp = round(pop_bpE/tot_popE, digits = 2)*100,
-         cpr = round(bp_u18E/pop_u18E, digits = 2)*100,
-         cpr_u5 = round(bp_u5E/pop_u5E, digits = 2)*100,
-         rohh_per = round(rohhE/thhE, digits = 2)*100,
-         oohh_per = round(oohhE/thhE, digits = 2)*100,
-         pubas_u18per = round(pubas_u18E/thhE, digits = 2)*100,
-         pubas_per = round(pubas_totE/thhE, digits = 2)*100,
+         bp = round(pop_bpE/tot_popE, digits = 3)*100,
+         cpr = round(bp_u18E/pop_u18E, digits = 3)*100,
+         cpr_u5 = round(bp_u5E/pop_u5E, digits = 3)*100,
+         rohh_per = round(rohhE/thhE, digits = 3)*100,
+         oohh_per = round(oohhE/thhE, digits = 3)*100,
+         pubas_u18per = round(pubas_u18E/thh_u18E, digits = 3)*100,
+         pubas_per = round(pubas_totE/thhE, digits = 3)*100,
          births_u100 = birmar_u100E+birunm_u100E,
-         births_bp_per = round(births_u100/wraE, digits = 2)*100,
-         births_per = round(birthsE/wraE, digits = 2)*100,
+         births_bp_per = round(births_u100/wraE, digits = 3)*100,
+         births_per = round(birthsE/wraE, digits = 3)*100,
          hs_per = hs_degE/pop_degE,
          ba_per = ba_degE/pop_degE
          ) %>%
-  select(-ends_with("M"), -maxdemo, -inc_qc, -(birmar_u100E:birunm_u100E), pop_degE)
+  select(-ends_with("M"), -maxdemo, -inc_qc, -(birmar_u100E:birunm_u100E), pop_degE, -thh_u18E)
 
 medinc_vb <- tidymut %>%
   filter(inc_gr == "Very Below")
@@ -433,4 +434,4 @@ tidymut %>%
 
 * __Living with Grandparents u6:__ Total number of children under 6 living in grandparents household.
 
-* __Households w/u18 Receiving Food Stamps/SNAP:__ Percent of households with children under 18 receiving food stamps/SNAP.
+* __Households w/u18 Receiving Food Stamps/SNAP:__ Percent of households with children under 18 receiving food stamps/SNAP compared to total households with children under 18.
