@@ -3,7 +3,8 @@ bookdown::gitbook:
   css: assets/style.css
   config:
     toc:
-      collapse: section
+      toc_float: TRUE
+      collapse: subsection
       before: |
         <li class="toc-logo"><a href="./"><img src="images/CPAL_Logo.png"></a></li>
       after: |
