@@ -7,6 +7,4 @@ output:
 favicon: "images/favicon.ico"
 ---
 
-## Dallas County Census Tract Map
-
 This report contains a Leaflet web map of a number of identified indicators important for Birth to Three work by the Child Poverty Action Lab.

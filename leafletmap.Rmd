@@ -222,8 +222,8 @@ popup_vb <- paste0("<b>", "GEOID: ", "</b>", medinc_vb$GEOID, "<br>",
                "<b>", "White (%): ", "</b>", medinc_vb$wh_per, "%", "<br>",
                "<b>", "Child Poverty Rate (u5): ", "</b>", medinc_vb$cpr_u5, "%", "<br>",
                "<b>", "Women Births u100% FPL: ", "</b>", medinc_vb$births_bp_per, "%", "<br>",
-               "<b>", "Households w/u18 Receiving SNAP/Food Stamps: ", "</b>", medinc_vb$births_bp_per, "%",
-               "<b>", "Single Parent Households Female Householder: ", "</b>", medinc_vb$sphh_fper, "%"
+               "<b>", "Households w/u18 Receiving SNAP/Food Stamps: ", "</b>", medinc_vb$births_bp_per, "%", "<br>",
+               "<b>", "Single Parent Households Female Householder: ", "</b>", round(medinc_vb$sphh_fper*100, digits = 1), "%"
                )
 
 popup_sb <- paste0("<b>", "GEOID: ", "</b>", medinc_sb$GEOID, "<br>",
@@ -235,8 +235,8 @@ popup_sb <- paste0("<b>", "GEOID: ", "</b>", medinc_sb$GEOID, "<br>",
                 "<b>", "White (%): ", "</b>", medinc_sb$wh_per, "%", "<br>",
                 "<b>", "Child Poverty Rate (u5): ", "</b>", medinc_vb$cpr_u5, "%", "<br>",
                 "<b>", "Women Births u100% FPL: ", "</b>", medinc_vb$births_bp_per, "%", "<br>",
-                "<b>", "Households w/u18 Receiving SNAP/Food Stamps: ", "</b>", medinc_vb$births_bp_per, "%",
-               "<b>", "Single Parent Households Female Householder: ", "</b>", medinc_vb$sphh_fper, "%")
+                "<b>", "Households w/u18 Receiving SNAP/Food Stamps: ", "</b>", medinc_vb$births_bp_per, "%", "<br>",
+               "<b>", "Single Parent Households Female Householder: ", "</b>", round(medinc_vb$sphh_fper*100, digits = 1), "%")
 
 popup_aa <- paste0("<b>", "GEOID: ", "</b>", medinc_aa$GEOID, "<br>",
                 "<b>", "Median Income: ", "</b>", "$", medinc_aa$med_incE, "<br>",
@@ -247,8 +247,8 @@ popup_aa <- paste0("<b>", "GEOID: ", "</b>", medinc_aa$GEOID, "<br>",
                 "<b>", "White (%): ", "</b>", medinc_aa$wh_per, "%", "<br>",
                 "<b>", "Child Poverty Rate (u5): ", "</b>", medinc_vb$cpr_u5, "%", "<br>",
                 "<b>", "Women Births u100% FPL: ", "</b>", medinc_vb$births_bp_per, "%", "<br>",
-                "<b>", "Households w/u18 Receiving SNAP/Food Stamps: ", "</b>", medinc_vb$births_bp_per, "%",
-               "<b>", "Single Parent Households Female Householder: ", "</b>", medinc_vb$sphh_fper, "%")
+                "<b>", "Households w/u18 Receiving SNAP/Food Stamps: ", "</b>", medinc_vb$births_bp_per, "%", "<br>",
+               "<b>", "Single Parent Households Female Householder: ", "</b>", round(medinc_vb$sphh_fper*100, digits = 1), "%")
 
 popup_sa <- paste0("<b>", "GEOID: ", "</b>", medinc_sa$GEOID, "<br>",
                 "<b>", "Median Income: ", "</b>", "$", medinc_sa$med_incE, "<br>",
@@ -259,8 +259,8 @@ popup_sa <- paste0("<b>", "GEOID: ", "</b>", medinc_sa$GEOID, "<br>",
                 "<b>", "White (%): ", "</b>", medinc_sa$wh_per, "%", "<br>",
                 "<b>", "Child Poverty Rate (u5): ", "</b>", medinc_vb$cpr_u5, "%", "<br>",
                 "<b>", "Women Births u100% FPL: ", "</b>", medinc_vb$births_bp_per, "%", "<br>",
-                "<b>", "Households w/u18 Receiving SNAP/Food Stamps: ", "</b>", medinc_vb$births_bp_per, "%",
-               "<b>", "Single Parent Households Female Householder: ", "</b>", medinc_vb$sphh_fper, "%")
+                "<b>", "Households w/u18 Receiving SNAP/Food Stamps: ", "</b>", medinc_vb$births_bp_per, "%", "<br>",
+               "<b>", "Single Parent Households Female Householder: ", "</b>", round(medinc_vb$sphh_fper*100, digits = 1), "%")
 
 popup_va <- paste0("<b>", "GEOID: ", "</b>", medinc_va$GEOID, "<br>",
                 "<b>", "Median Income: ", "</b>", "$", medinc_va$med_incE, "<br>",
@@ -271,8 +271,8 @@ popup_va <- paste0("<b>", "GEOID: ", "</b>", medinc_va$GEOID, "<br>",
                 "<b>", "White (%): ", "</b>", medinc_va$wh_per, "%", "<br>",
                 "<b>", "Child Poverty Rate (u5): ", "</b>", medinc_vb$cpr_u5, "%", "<br>",
                 "<b>", "Women Births u100% FPL: ", "</b>", medinc_vb$births_bp_per, "%", "<br>",
-                "<b>", "Households w/u18 Receiving SNAP/Food Stamps: ", "</b>", medinc_vb$births_bp_per, "%",
-               "<b>", "Single Parent Households Female Householder: ", "</b>", medinc_vb$sphh_fper, "%")
+                "<b>", "Households w/u18 Receiving SNAP/Food Stamps: ", "</b>", medinc_vb$births_bp_per, "%", "<br>",
+               "<b>", "Single Parent Households Female Householder: ", "</b>", round(medinc_vb$sphh_fper*100, digits = 1), "%")
 
 #### Leaflet Map ###################
 leaflet() %>%
