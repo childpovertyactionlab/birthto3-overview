@@ -1,0 +1,15 @@
+name: "birthto3-overview"
+title: "Birth to Three Overview"
+theme: theme.css
+description: |
+  A leaflet map generated in R with the tidycensus package compiling a number of American Community Survey variables related to our work within the Birth to Three space.
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Leaflet Map"
+      href: leafletmap.html
+    - text: "Data Dictionary"
+      href: datadictionary.html
+output: distill::distill_article

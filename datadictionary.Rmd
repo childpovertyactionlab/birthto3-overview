@@ -1,0 +1,46 @@
+---
+title: Birth to Three Overview
+output:
+  distill::distill_article:
+    toc:false:
+      theme: theme.css
+favicon: "images/favicon.ico"
+---
+
+### Data Definitions
+
+* __GEOID:__ Unique identifier of census tract.
+
+* __Total Population:__ Total population count.
+
+* __Hispanic (%):__ Percent Hispanic population
+
+* __Black (%):__ Percent Black population
+
+* __White (%):__ Percent White Non-Hispanic population
+
+* __Asian (%):__ Percent Asian population
+
+* __Majority Demographic:__ Demographic that is at least 45% of the population of a tract.
+
+* __Median Income:__ Median income of census tract
+
+* __Child Poverty Rate (u18):__ Percent children under 18 living below poverty.
+
+* __Child Poverty Rate (u5):__ Percent children under 5 living below poverty.
+
+* __Women Birth 100% FPL:__ Percent of women who have given birth within the last 12 months who are below 200% of the federal poverty line.
+
+* __Single Parent Households:__ Percent of households with a single parent.
+
+* __Enrolled Pre-School:__ Percent of children between 3 and 4 enrolled in school.
+
+* __Child Households Public Assistance (%):__ Percent of children under 18 who live in households receiving public assistance (includes SNAP, WIC, etc.)
+
+* __Total Child Care Centers:__ Total number of child care centers per Texas Department of State Health Services
+
+* __Average Household Size:__ Average household size
+
+* __Living with Grandparents u6:__ Total number of children under 6 living in grandparents household.
+
+* __Households w/u18 Receiving Food Stamps/SNAP:__ Percent of households with children under 18 receiving food stamps/SNAP compared to total households with children under 18.
