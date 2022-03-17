@@ -185,6 +185,10 @@ tidymut <- tidyadd %>%
          ) %>%
   select(-ends_with("M"), -maxdemo, -inc_qc, -(birmar_u100E:birunm_u100E), pop_degE, -thh_u18E)
 
+tidymut %>%
+  st_drop_geometry(.) %>%
+  rio::export(., "C:/Users/micha/CPAL Dropbox/Birth to 3/04_Projects/Birth to Three Planning/Data/TidyCensus_Updated Variables 2019.csv")
+
 medinc_vb <- tidymut %>%
   filter(inc_gr == "Very Below")
 
